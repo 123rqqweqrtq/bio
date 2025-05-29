@@ -34,13 +34,42 @@
     }
 
     .bio-box {
-      border: 2px solid rgba(255, 0, 0, 0.5);
       padding: 20px;
-      border-radius: 10px;
+      border-radius: 16px;
       background-color: rgba(0, 0, 0, 0.4);
       font-size: 14px;
       line-height: 1.6;
       max-width: 90%;
+      border: 3px solid transparent;
+      background-clip: padding-box;
+      position: relative;
+    }
+
+    /* Красивый бордер с узором */
+    .bio-box::before {
+      content: "";
+      position: absolute;
+      top: -3px;
+      left: -3px;
+      right: -3px;
+      bottom: -3px;
+      z-index: -1;
+      border-radius: 16px;
+      background: linear-gradient(135deg, #8b0000, #000);
+      mask: 
+        linear-gradient(#fff 0 0) content-box, 
+        linear-gradient(#fff 0 0);
+      mask-composite: exclude;
+      -webkit-mask-composite: destination-out;
+    }
+
+    a {
+      color: #ff4f4f;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
     }
 
     .watermark {
@@ -51,6 +80,17 @@
       color: #ff0000aa;
       pointer-events: none;
     }
+
+    @media (max-width: 768px) {
+      .bio-box {
+        font-size: 12px;
+        padding: 15px;
+      }
+
+      .watermark {
+        font-size: 9px;
+      }
+    }
   </style>
 </head>
 <body>
@@ -59,9 +99,9 @@
       <p>𝐧𝐚𝐦𝐞: 𝑵𝒊𝒌𝒊𝒕𝒂</p>
       <p>𝐚𝐠𝐞: 𝟏𝟕</p>
       <p>𝐧𝐢𝐜𝐤𝐧𝐚𝐦𝐞: 𝒃𝒆𝑱𝒍𝒃𝒍𝒖𝒖 | 𝒏𝒂𝒗𝒆𝒍𝒍𝒆𝒔𝒔</p>
-      <p>𝐝𝐞𝐟 𝐛𝐲: @TTOXOP0HEH</p>
-      <p>𝐦𝐲 𝐭𝐞𝐥𝐞𝐠𝐫𝐚𝐦: @NAVELLESS</p>
-      <p>𝐜𝐥𝐚𝐧𝐞𝐥: <a href="https://t.me/Dissocialnost" target="_blank" style="color: #ff4444;">@Dissocialnost</a></p>
+      <p>𝐝𝐞𝐟 𝐛𝐲: <a href="https://t.me/TTOXOP0HEH" target="_blank">@TTOXOP0HEH</a></p>
+      <p>𝐦𝐲 𝐭𝐞𝐥𝐞𝐠𝐫𝐚𝐦: <a href="https://t.me/NAVELLESS" target="_blank">@NAVELLESS</a></p>
+      <p>𝐜𝐥𝐚𝐧𝐞𝐥: <a href="https://t.me/Dissocialnost" target="_blank">@Dissocialnost</a></p>
     </div>
   </div>
   <div class="watermark">created by @navelless</div>
